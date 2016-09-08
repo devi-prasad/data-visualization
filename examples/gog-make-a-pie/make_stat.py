@@ -1,3 +1,4 @@
+from __future__ import division
 import numpy as np
 import pandas as pd
 
@@ -26,6 +27,15 @@ def read_responses_women(path):
     #
     return (wc, wpd1, wpd2, wpd3, wpd4, wpd5)
 
+def make_stat(n, rare, infrq, occ, frq, nosure):
+    d = [ np.around(rare/n, 3),
+          np.around(infrq/n, 3),
+          np.around(occ/n, 3),
+          np.around(frq/n, 3), 
+          np.around(nosure/n, 3)]
+    stat = pd.DataFrame(d, index=[range(1, 6)])
+    return stat
+
 
 def run_test():
     mc, mrare, minfq, mocc, mfrq, mnosure = read_responses_men("men.csv")
@@ -33,6 +43,15 @@ def run_test():
     #
     print(mc, mrare.size, minfq.size, mocc.size, mfrq.size, mnosure.size)
     print(wc, wrare.size, winfq.size, wocc.size, wfrq.size, wnosure.size)
+    #
+    mresp = make_stat(mc, mrare.size, minfq.size, mocc.size, mfrq.size, mnosure.size)
+    wresp = make_stat(wc, wrare.size, winfq.size, wocc.size, wfrq.size, wnosure.size)
+    #
+    print("Response -- men")
+    print(mresp)
+    print("\n")
+    print("Response -- women")
+    print(wresp)
 
 
 run_test()
