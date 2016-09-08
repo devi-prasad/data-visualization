@@ -33,7 +33,7 @@ def make_stat(n, rare, infrq, occ, frq, nosure):
           np.around(occ/n, 3),
           np.around(frq/n, 3), 
           np.around(nosure/n, 3)]
-    stat = pd.DataFrame(d, index=[range(1, 6)])
+    stat = pd.DataFrame(d, index=range(1, 6))
     return stat
 
 
