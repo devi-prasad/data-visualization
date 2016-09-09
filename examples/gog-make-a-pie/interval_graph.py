@@ -4,34 +4,50 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
 
-def plot_interval_graph(si, imagePath=None):
-    fig = plt.figure(figsize=(6, 2))
-    axes = fig.add_subplot(111)
+def setup_figure_plot_env(title):
+    fig = plt.figure(figsize=(6, 2), dpi=60, facecolor='white')
+    fig.canvas.set_window_title(title)
+    axes = fig.add_subplot(111, axisbg=(1, 1, 1))
+    axes.set_axis_bgcolor('white')
+    axes.grid(True, which='both') # False - to not draw the grid lines.
     axes.set_xlim(0.0, 1.0)
-    axes.set_ylim(0.0, 1.0)
-
-    axes.get_xaxis().get_major_formatter().set_useOffset(False)
-    axes.get_yaxis().get_major_formatter().set_useOffset(False)
-
+    axes.set_ylim(0.0, 0.7)
+    axes.axis('on') # 'off' - to hide the axes
+    #
     axes.xaxis.set_major_locator(ticker.MultipleLocator(0.1))
     axes.xaxis.set_minor_locator(ticker.MultipleLocator(0.05))
-
     axes.yaxis.set_major_locator(ticker.MultipleLocator(0.2))
-    vline = plt.Line2D((0, si[0]), (0.95, 0.95), antialiased=True, lw=8, c='k')
-    axes.add_line(vline)
-    vline = plt.Line2D((si[0], si[1]), (0.75, 0.75), antialiased=True, lw=8, c='k')
-    axes.add_line(vline)
-    vline = plt.Line2D((si[1], si[2]), (0.55, 0.55), antialiased=True, lw=8, c='k')
-    axes.add_line(vline)
-    vline = plt.Line2D((si[2], si[3]), (0.35, 0.35), antialiased=True, lw=8, c='k')
-    axes.add_line(vline)
-    vline = plt.Line2D((si[3], si[4]), (0.15, 0.15), antialiased=True, lw=8, c='k')
-    axes.add_line(vline)
+    axes.yaxis.set_minor_locator(ticker.MultipleLocator(0.05))
+    #
+    mpl.rc('lines', linewidth = 4, color = 'k', antialiased=False)
+    #
 
+
+def show_or_save_plot(imagePath=None):
     if imagePath:
-        plt.savefig(imagePath, bbox_inches='tight', dpi=72, transparent=False)
+        plt.savefig(imagePath, bbox_inches='tight', dpi=90, transparent=False)
     else:
         plt.show()
+
+
+def draw_interval_graph(si):
+    axes = plt.gca()
+    vline = plt.Line2D((0, si[0]), (0.65, 0.65))
+    axes.add_line(vline)
+    vline = plt.Line2D((si[0], si[1]), (0.5, 0.5))
+    axes.add_line(vline)
+    vline = plt.Line2D((si[1], si[2]), (0.35, 0.35))
+    axes.add_line(vline)
+    vline = plt.Line2D((si[2], si[3]), (0.2, 0.2))
+    axes.add_line(vline)
+    vline = plt.Line2D((si[3], si[4]), (0.05, 0.05))
+    axes.add_line(vline)
+
+
+def plot_interval_graph(msi, title, imagePath):
+    setup_figure_plot_env(title)
+    draw_interval_graph(msi)
+    show_or_save_plot(imagePath)
 
 
 def runTest():
@@ -42,8 +58,17 @@ def runTest():
     msi = np.cumsum(msummary)
     wsi = np.cumsum(wsummary)
 
-    plot_interval_graph(msi, "men.png")
-    plot_interval_graph(wsi, "women.png")
+    ### view the plot on the screen
+    #plot_interval_graph(msi, "Summary - Men", None)
+
+    ### save the plot as an image
+    plot_interval_graph(msi, "Summary - Men", "men.png")
+
+    ### view the plot on the screen
+    #plot_interval_graph(wsi, "Summary - Women", None)
+
+    ### save the plot as an image
+    plot_interval_graph(wsi, "Summary - Women", "women.png")
 
 
 runTest()
