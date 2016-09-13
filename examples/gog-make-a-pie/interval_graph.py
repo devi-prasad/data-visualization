@@ -30,6 +30,10 @@ def show_or_save_plot(imagePath=None):
         plt.show()
 
 
+###
+# The summary data is mapped to x-axis of the Cartesian coordinate system.
+# Neither data not the axis is scaled in any manner.
+###
 def draw_interval_graph(si):
     axes = plt.gca()
     hline = plt.Line2D((0, si[0]), (0.65, 0.65))
@@ -50,13 +54,17 @@ def plot_interval_graph(msi, title, imagePath):
     show_or_save_plot(imagePath)
 
 
+def transform_summary_data(summary):
+    return np.cumsum(summary)
+
+
 def runTest():
     msummary = [0.30, 0.15, 0.10, 0.07, 0.38]
     wsummary = [0.08, 0.11, 0.17, 0.32, 0.32]
 
     # compute the cumulative sum of these numbers
-    msi = np.cumsum(msummary)
-    wsi = np.cumsum(wsummary)
+    msi = transform_summary_data(msummary)
+    wsi = transform_summary_data(wsummary)
 
     ### view the plot on the screen
     plot_interval_graph(msi, "Summary - Men", None)
