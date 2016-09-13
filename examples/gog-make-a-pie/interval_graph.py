@@ -32,16 +32,16 @@ def show_or_save_plot(imagePath=None):
 
 def draw_interval_graph(si):
     axes = plt.gca()
-    vline = plt.Line2D((0, si[0]), (0.65, 0.65))
-    axes.add_line(vline)
-    vline = plt.Line2D((si[0], si[1]), (0.5, 0.5))
-    axes.add_line(vline)
-    vline = plt.Line2D((si[1], si[2]), (0.35, 0.35))
-    axes.add_line(vline)
-    vline = plt.Line2D((si[2], si[3]), (0.2, 0.2))
-    axes.add_line(vline)
-    vline = plt.Line2D((si[3], si[4]), (0.05, 0.05))
-    axes.add_line(vline)
+    hline = plt.Line2D((0, si[0]), (0.65, 0.65))
+    axes.add_line(hline)
+    hline = plt.Line2D((si[0], si[1]), (0.5, 0.5))
+    axes.add_line(hline)
+    hline = plt.Line2D((si[1], si[2]), (0.35, 0.35))
+    axes.add_line(hline)
+    hline = plt.Line2D((si[2], si[3]), (0.2, 0.2))
+    axes.add_line(hline)
+    hline = plt.Line2D((si[3], si[4]), (0.05, 0.05))
+    axes.add_line(hline)
 
 
 def plot_interval_graph(msi, title, imagePath):
@@ -59,16 +59,16 @@ def runTest():
     wsi = np.cumsum(wsummary)
 
     ### view the plot on the screen
-    #plot_interval_graph(msi, "Summary - Men", None)
+    plot_interval_graph(msi, "Summary - Men", None)
 
     ### save the plot as an image
-    plot_interval_graph(msi, "Summary - Men", "men.png")
+    #plot_interval_graph(msi, "Summary - Men", "men.png")
 
     ### view the plot on the screen
-    #plot_interval_graph(wsi, "Summary - Women", None)
+    plot_interval_graph(wsi, "Summary - Women", None)
 
     ### save the plot as an image
-    plot_interval_graph(wsi, "Summary - Women", "women.png")
+    #plot_interval_graph(wsi, "Summary - Women", "women.png")
 
 
 runTest()
