@@ -58,7 +58,7 @@ def transform_summary_data(summary):
     return np.cumsum(summary)
 
 
-def runTest():
+def plot_summary_interval_graph():
     msummary = [0.30, 0.15, 0.10, 0.07, 0.38]
     wsummary = [0.08, 0.11, 0.17, 0.32, 0.32]
 
@@ -67,16 +67,17 @@ def runTest():
     wsi = transform_summary_data(wsummary)
 
     ### view the plot on the screen
-    plot_interval_graph(msi, "Summary - Men", None)
+    #plot_interval_graph(msi, "Summary - Men", None)
 
     ### save the plot as an image
-    #plot_interval_graph(msi, "Summary - Men", "men.png")
+    plot_interval_graph(msi, "Summary - Men", "men.png")
 
     ### view the plot on the screen
-    plot_interval_graph(wsi, "Summary - Women", None)
+    #plot_interval_graph(wsi, "Summary - Women", None)
 
     ### save the plot as an image
-    #plot_interval_graph(wsi, "Summary - Women", "women.png")
+    plot_interval_graph(wsi, "Summary - Women", "women.png")
 
 
-runTest()
+plot_summary_interval_graph()
+
