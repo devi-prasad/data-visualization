@@ -26,20 +26,22 @@ def compute_stats(df):
 
 
 def plot_crime_gender_pattern(df, mf):
-  fig = plt.figure()
+  fig = plt.figure(figsize=(20, 12), dpi=80)
   fig.canvas.set_window_title('Gender Differences in Crime Patterns')
   axes = fig.add_subplot(111)
   fig.canvas.draw()
   #
-  axes.set_title("Gender Differences in Crime Patterns")
   axes.set_xlim(-0.5, 1.0)
-  axes.set_ylim(mf.index.size)
+  axes.set_ylim(0, mf.index.size)
   axes.set_xlabel('PATTERN')
   axes.set_ylabel('OFFENSE')
+  axes.spines['right'].set_visible(False)
+  axes.spines['top'].set_visible(False)
+  axes.spines['left'].set_position(('data', -0.5))
+  axes.spines['bottom'].set_position(('data', 0 ))
   axes.xaxis.set_major_locator(ticker.MultipleLocator(0.1))
   axes.yaxis.set_major_locator(ticker.MultipleLocator(1))
-  locs = axes.get_yticks().tolist()
-  axes.set_yticks(locs)
+  axes.set_yticks(np.linspace(0, mf.index.size-1, mf.index.size, endpoint=True))
   axes.set_yticklabels(df.Offense.values)
   #
   plt.grid(True, which='both')
@@ -51,4 +53,3 @@ def main():
   df = import_data_and_validate('arrests_usa_2014.csv')
   mf = compute_stats(df)
   plot_crime_gender_pattern(df, mf)
-
