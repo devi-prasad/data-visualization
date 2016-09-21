@@ -1,3 +1,4 @@
+from __futures__ import division
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -409,5 +410,55 @@ def draw_filled_arc(plt):
   plt.axis('on')
   plt.show()
 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## spines with explicit ticks and stuff
+def draw_spines(plt):
+  fig = plt.figure(figsize=(9, 6), dpi=80)
+  axes = fig.add_subplot(111)
+  axes.spines['right'].set_color('none')
+  axes.spines['top'].set_color('none')
+  axes.spines['right'].set_visible(False)
+  axes.spines['top'].set_visible(False)
+  axes.xaxis.set_ticks_position('bottom')
+  axes.spines['bottom'].set_position(('data', 0))
+  axes.yaxis.set_ticks_position('left')
+  axes.spines['left'].set_position(('data', 0.5))
+  #
+  axes.set_xlim(-1.8, 1.8)
+  axes.set_ylim(-1.8, 1.8)
+  plt.xticks([-1.5, -1.0, -0.5, 0, 0.5, 1.0, 1.5],
+             [r'-1.5', r'-1.0', r'-0.5', r'0', r'0.5', r'1.0', r'1.5'])
+  plt.yticks([-1.5, -1.0, -0.5, 0, 0.5, 1.0, 1.5],
+             [r'-1.5', r'-1.0', r'-0.5', r'0', r'0.5', r'1.0', r'1.5'])
+  plt.show()
+
+
+def draw_sine_cosine_on_spines(np, plt):
+  fig = plt.figure(figsize=(8,5), dpi=90)
+  axes = fig.add_subplot(111)
+  ##
+  axes.spines['right'].set_color('none')
+  axes.spines['top'].set_color('none')
+  axes.xaxis.set_ticks_position('bottom')
+  axes.spines['bottom'].set_position(('data',0))
+  axes.yaxis.set_ticks_position('left')
+  axes.spines['left'].set_position(('data',0))
+  ##
+  X = np.linspace(-np.pi, np.pi, 256, endpoint=True)
+  S, C = np.sin(X), np.cos(X)
+  ##
+  axes.plot(X, S, color="blue", linewidth=2, linestyle="-")
+  axes.plot(X, C, color="magenta", linewidth=2, linestyle="-")
+  ##
+  axes.set_xlim(X.min() * 1.2, X.max() * 1.2)
+  plt.xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi],
+             [r'$-\pi$', r'$-\pi/2$', r'$0$', r'$+\pi/2$', r'$+\pi$'])
+  ##
+  axes.set_ylim(C.min()*1.1,C.max()*1.1)
+  plt.yticks([-1, 0, +1], [r'$-1$', r'$0$', r'$+1$'])
+  axes.plot()
+  plt.show()
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
