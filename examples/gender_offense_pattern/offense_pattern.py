@@ -41,11 +41,17 @@ def plot_crime_gender_pattern(df, mf):
   axes.spines['bottom'].set_position(('data', 0 ))
   axes.xaxis.set_major_locator(ticker.MultipleLocator(0.1))
   axes.yaxis.set_major_locator(ticker.MultipleLocator(1))
-  axes.set_yticks(np.linspace(0, mf.index.size-1, mf.index.size, endpoint=True))
-  axes.set_yticklabels(df.Offense.values)
   #
+  axes.set_yticks(np.linspace(0, mf.index.size-1, mf.index.size, endpoint=True))
+  ## to plot an ascending pattern, properly label the y-axis.
+  ## labels must match the ascending order of the offense values
+  labels = []
+  for i in mf.index:
+    labels.append(df.Offense.values[i])
+  axes.set_yticklabels(labels);
+  ##
   plt.grid(True, which='both')
-  axes.plot(mf.values, mf.index, 'ro', color='r')
+  axes.plot(mf.values, range(len(mf.values)), 'ro')
   plt.show()
 
 
@@ -53,3 +59,6 @@ def main():
   df = import_data_and_validate('arrests_usa_2014.csv')
   mf = compute_stats(df)
   plot_crime_gender_pattern(df, mf)
+
+
+main()
