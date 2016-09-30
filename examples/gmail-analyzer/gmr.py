@@ -27,7 +27,7 @@ def update_identities(emid, name):
 def split_name_and_email_id(s):
   ilab = s.index('<')
   irab = s.index('>')
-  name = s[5:ilab].strip()
+  name = s[3:ilab].strip()  # The magic number for skipping past 'To:'
 
   if (name is None or len(name) == 0): name='%nan%'
   else:
