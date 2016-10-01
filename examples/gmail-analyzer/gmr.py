@@ -1,8 +1,8 @@
 from __future__ import print_function
-import sys
 import re
 import contextlib
 import mmap
+import io
 
 ###
 ### Lists email ids of those to whom I have emailed.
@@ -11,13 +11,12 @@ import mmap
 
 identities = {}  # email id is the key, and name of the contact is the value.
 frequencies = {} # email id is the key, and frequency is the value.
-count_seen = 0   # how many emails did we check?
 
 def update_identities(emid, name):
   global identities, frequencies
   # convert the email id to a lowercase string.
   emid = emid.lower()
-  if not identities.has_key(emid):
+  if emid not in identities: #not identities.has_key(emid):
     identities[emid] = name
     frequencies[emid] = 1
   else:
@@ -45,17 +44,13 @@ def split_name_and_email_id(s):
   # mail archive.
   ###
 def get_senders(f):
-  global count_seen
-  pattern = re.compile("To:[ \"\'][ .\-\[\]\w\'\"]+<.+@.+>", re.IGNORECASE)
+  pattern = re.compile(b"To:[ \"\'][ .\-\[\]\w\'\"]+<.+@.+>", re.IGNORECASE)
   with contextlib.closing(mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)) as m:
     matches = re.findall(pattern, m)
     if (matches):
       for m in matches:
-        (name, emid) = split_name_and_email_id(m)
+        (name, emid) = split_name_and_email_id(m.decode(errors='ignore'))
         update_identities(emid, name)
-        count_seen = count_seen + 1
-  #
-  return count_seen
 
 
   ###
@@ -63,19 +58,18 @@ def get_senders(f):
   #
   ###
 def main(mail_archive_path):
-  global identities, frequencies, count_seen
-  #
-  f = file(mail_archive_path, "r")
+  global identities, frequencies
+  ##
+  f = io.open(mail_archive_path, "rt", encoding='utf-8')
   get_senders(f)
   f.close()
-  #
-  #
-  #print("seen: %d" % count_seen, file=sys.stderr)
-  f = file("receivers.csv", 'w')
+  ##
+  ##
+  f = io.open("receivers.csv", 'wt', encoding='utf-8')
   for emid in identities:
     print("%s,%s" % (emid, identities[emid]), file=f)
   f.close()
-  f = file("frequencies.csv", 'w')
+  f = io.open("frequencies.csv", 'wt', encoding='utf-8')
   for emid in frequencies:
     print("%s,%d" % (emid, frequencies[emid]), file=f)
   f.close()
