@@ -16,10 +16,10 @@ def extract_headers(f):
   with contextlib.closing(mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)) as m:
     matches = pattern.findall(m)
     if (matches):
-      print('+' * 80)
+      print('++##++')
       for m in matches:
         print(m.decode(errors='ignore'))
-        print('+' * 80)
+        print('++##++')
 
 
 def main(mail_archive_path):
