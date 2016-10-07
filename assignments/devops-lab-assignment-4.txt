@@ -1,0 +1,15 @@
+Assignment #4.
+
+Collect the marks obtained by each student of your batch (first semester, 'big 
+data and data analysis' program) in all five courses.
+
+(1) What visualization would you propose and create in order to present an 
+    overall picture of the academic performance? You must be able to logically 
+    argue about the methodical choices you have made.
+(2) How would you present the average performance of the batch?
+(3) Would you compare your batch's performance with that of, say, the students 
+    in the 'embedded systems' program? How would you take into account the 
+    difference in the population size?
+(4) What inferences would you draw from the performances of students in your 
+    batch, across five different courses?
+

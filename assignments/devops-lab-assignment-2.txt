@@ -1,0 +1,18 @@
+Assignment #2.
+
+Retrieve the date and time of all commits, and the corresponding commit (text) messages, for each of the following three repositories (aka the population):
+    https://github.com/sois/sap-efrei-spring-2016
+    https://github.com/sois/moderndatabases-monsoon16
+    https://github.com/sois/data-visualization
+
+Analyze the population data, and answer the following questions:
+(1) what is the average length (in number of characters) of commit messages?
+(2) What is the average word count in commit messages.
+(3) What are the most frequently used words in the commit messages?
+(4) Do weekdays witness more commits than weekends? 
+(5) Do mid-week days witness more or less commits?
+(6) If you do a regression analysis, what inferences would you draw?
+
+(A) You must create a visualization for each ot these question. 
+(B) You should be able to check how far the visualizations agree with the 
+    statistical inferences.

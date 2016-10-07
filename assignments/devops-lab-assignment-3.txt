@@ -1,0 +1,13 @@
+Assignment #3
+
+Randomly select six or seven computers in the laboratory (including your own 
+computer), and copy the browsing history from each of the Web browser installed on that machine. (If three Web browsers are installed on a computer, copy the 
+browsing history from all three browsers). Make sure that you have at least 
+five days worth of browsing history for each machine.
+
+(1) Sort the data according to domain names. Measure interesting parameters and 
+    develop an equally interesting visualization.
+(2) If you run the same experiment across labs in SOIS, can you draw definitive 
+    inferences about the browsing habits or practices of users?
+(3) Is there a correlation between domain names and the purpose of the lab?
+(4) What graphs would you create to effectively convey this information?

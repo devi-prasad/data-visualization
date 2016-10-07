@@ -1,0 +1,85 @@
+Assignment #1
+
+One of the requirements is to learn adequate scripting and programming to be 
+able to solve routine data-related problems. You are expected to learn Linux commands, BASH scripting, and Python for systems administration/management.
+
+The following is a sample assignment just to get you off the ground. You must 
+set practice projects such as these for yourself and gain confidence.
+
+(1) Inspect the output of the command 'ps -ef'. Use grep to detect if there are
+    processes with names starting with 'chrome' and 'firefox'
+(2) For each of the process identified in step (1) above, use 'cut' or 
+    equivalent command to project its process id.
+(3) Kill each of the process selected in step (2) above.
+##
+(4) Each tab in Google Chrome browser is an independent process. Write a shell
+    script to terminate the process that corresponds to a particular tab in the
+    browser.
+(5) Taking 'home' directory as the root, recursively enumerate all files with 
+    extensions matching '.pdf' or '.txt' that were created a week ago (or some 
+    arbitrary time, for that matter).
+##
+(6) What is the official/documented way to install a new Python module in the
+    system?
+(7) What purpose does the '/proc' file system in Linux serve? Use your
+    imagination and suggest two ideas that may be pretty useful in your own
+    case. Could you write a shell script to achieve the same?
+##
+(8) Have you installed both Python 2.7.X and 3.2.X in your machine? How would 
+    you set up your computer to have a side-by-side installation of both
+    versions of Python (so you can test your programs on both platforms)?
+(9) Use a container (virtualization) technology such as OpenVZ (which is pretty
+    lightweight) and use separate containers to host different versions of
+    Python.
+##
+(10) Use your imagination and originality to grow the list.
+
+
+Assignment #2.
+
+Retrieve the date and time of all commits, and the corresponding commit (text) messages, for each of the following three repositories (aka the population):
+    https://github.com/sois/sap-efrei-spring-2016
+    https://github.com/sois/moderndatabases-monsoon16
+    https://github.com/sois/data-visualization
+
+Analyze the population data, and answer the following questions:
+(1) what is the average length (in number of characters) of commit messages?
+(2) What is the average word count in commit messages.
+(3) What are the most frequently used words in the commit messages?
+(4) Do weekdays witness more commits than weekends? 
+(5) Do mid-week days witness more or less commits?
+(6) If you do a regression analysis, what inferences would you draw?
+
+(A) You must create a visualization for each ot these question. 
+(B) You should be able to check how far the visualizations agree with the 
+    statistical inferences.
+
+
+Assignment #3
+
+Randomly select six or seven computers in the laboratory (including your own 
+computer), and copy the browsing history from each of the Web browser installed on that machine. (If three Web browsers are installed on a computer, copy the 
+browsing history from all three browsers). Make sure that you have at least 
+five days worth of browsing history for each machine.
+
+(1) Sort the data according to domain names. Measure interesting parameters and 
+    develop an equally interesting visualization.
+(2) If you run the same experiment across labs in SOIS, can you draw definitive 
+    inferences about the browsing habits or practices of users?
+(3) Is there a correlation between domain names and the purpose of the lab?
+
+
+Assignment #4.
+
+Collect the marks obtained by each student of your batch (first semester, 'big 
+data and data analysis' program) in all five courses.
+
+(1) What visualization would you propose and create in order to present an 
+    overall picture of the academic performance? You must be able to logically 
+    argue about the methodical choices you have made.
+(2) How would you present the average performance of the batch?
+(3) Would you compare your batch's performance with that of, say, the students 
+    in the 'embedded systems' program? How would you take into account the 
+    difference in the population size?
+(4) What inferences would you draw from the performances of students in your 
+    batch, across five different courses?

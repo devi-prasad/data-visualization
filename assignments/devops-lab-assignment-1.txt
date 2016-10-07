@@ -1,0 +1,36 @@
+Assignment #1
+
+One of the requirements is to learn adequate scripting and programming to be 
+able to solve routine data-related problems. You are expected to learn Linux commands, BASH scripting, and Python for systems administration/management.
+
+The following is a sample assignment just to get you off the ground. You must 
+set practice projects such as these for yourself and gain confidence.
+
+(1) Inspect the output of the command 'ps -ef'. Use grep to detect if there are
+    processes with names starting with 'chrome' and 'firefox'
+(2) For each of the process identified in step (1) above, use 'cut' or 
+    equivalent command to project its process id.
+(3) Kill each of the process selected in step (2) above.
+##
+(4) Each tab in Google Chrome browser is an independent process. Write a shell
+    script to terminate the process that corresponds to a particular tab in the
+    browser.
+(5) Taking 'home' directory as the root, recursively enumerate all files with 
+    extensions matching '.pdf' or '.txt' that were created a week ago (or some 
+    arbitrary time, for that matter).
+##
+(6) What is the official/documented way to install a new Python module in the
+    system?
+(7) What purpose does the '/proc' file system in Linux serve? Use your
+    imagination and suggest two ideas that may be pretty useful in your own
+    case. Could you write a shell script to achieve the same?
+##
+(8) Have you installed both Python 2.7.X and 3.2.X in your machine? How would 
+    you set up your computer to have a side-by-side installation of both
+    versions of Python (so you can test your programs on both platforms)?
+(9) Use a container (virtualization) technology such as OpenVZ (which is pretty
+    lightweight) and use separate containers to host different versions of
+    Python.
+##
+(10) Use your imagination and originality to grow the list.
+
