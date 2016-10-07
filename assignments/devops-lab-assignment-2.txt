@@ -1,9 +1,14 @@
 Assignment #2.
 
-Retrieve the date and time of all commits, and the corresponding commit (text) messages, for each of the following three repositories (aka the population):
+Retrieve the date and time of all commits, and the corresponding commit (text) 
+messages, for each of the following three repositories (aka the population):
     https://github.com/sois/sap-efrei-spring-2016
     https://github.com/sois/moderndatabases-monsoon16
     https://github.com/sois/data-visualization
+
+You may assume that you are working on the (checked-out) local repositories. 
+Use simple commands such as 'git log' to collect the required data. You are NOT
+expected to use any APIs or external libraries, and such.
 
 Analyze the population data, and answer the following questions:
 (1) what is the average length (in number of characters) of commit messages?

@@ -1,7 +1,8 @@
 Assignment #1
 
 One of the requirements is to learn adequate scripting and programming to be 
-able to solve routine data-related problems. You are expected to learn Linux commands, BASH scripting, and Python for systems administration/management.
+able to solve routine data-related problems. You are expected to learn Linux 
+commands, BASH scripting, and Python for systems administration/management.
 
 The following is a sample assignment just to get you off the ground. You must 
 set practice projects such as these for yourself and gain confidence.
@@ -37,10 +38,15 @@ set practice projects such as these for yourself and gain confidence.
 
 Assignment #2.
 
-Retrieve the date and time of all commits, and the corresponding commit (text) messages, for each of the following three repositories (aka the population):
+Retrieve the date and time of all commits, and the corresponding commit (text) 
+messages, for each of the following three repositories (aka the population):
     https://github.com/sois/sap-efrei-spring-2016
     https://github.com/sois/moderndatabases-monsoon16
     https://github.com/sois/data-visualization
+
+You may assume that you are working on the (checked-out) local repositories. 
+Use simple commands such as 'git log' to collect the required data. You are NOT
+expected to use any APIs or external libraries, and such.
 
 Analyze the population data, and answer the following questions:
 (1) what is the average length (in number of characters) of commit messages?
@@ -58,7 +64,8 @@ Analyze the population data, and answer the following questions:
 Assignment #3
 
 Randomly select six or seven computers in the laboratory (including your own 
-computer), and copy the browsing history from each of the Web browser installed on that machine. (If three Web browsers are installed on a computer, copy the 
+computer), and copy the browsing history from each of the Web browser installed 
+on that machine. (If three Web browsers are installed on a computer, copy the 
 browsing history from all three browsers). Make sure that you have at least 
 five days worth of browsing history for each machine.
 

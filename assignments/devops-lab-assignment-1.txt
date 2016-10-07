@@ -1,7 +1,8 @@
 Assignment #1
 
 One of the requirements is to learn adequate scripting and programming to be 
-able to solve routine data-related problems. You are expected to learn Linux commands, BASH scripting, and Python for systems administration/management.
+able to solve routine data-related problems. You are expected to learn Linux 
+commands, BASH scripting, and Python for systems administration/management.
 
 The following is a sample assignment just to get you off the ground. You must 
 set practice projects such as these for yourself and gain confidence.

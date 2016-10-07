@@ -1,7 +1,8 @@
 Assignment #3
 
 Randomly select six or seven computers in the laboratory (including your own 
-computer), and copy the browsing history from each of the Web browser installed on that machine. (If three Web browsers are installed on a computer, copy the 
+computer), and copy the browsing history from each of the Web browser installed 
+on that machine. (If three Web browsers are installed on a computer, copy the 
 browsing history from all three browsers). Make sure that you have at least 
 five days worth of browsing history for each machine.
 

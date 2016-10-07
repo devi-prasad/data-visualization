@@ -12,4 +12,3 @@ data and data analysis' program) in all five courses.
     difference in the population size?
 (4) What inferences would you draw from the performances of students in your 
     batch, across five different courses?
-
