@@ -1,0 +1,11 @@
+Refer to ch5.pdf. Page no. 11. Table 5.10: Women Judges in Supreme Court/High Courts.
+
+Take a look at the chart below on the same page of this document. Use this bar chart (axes, axes markers, and legends) as a reference for the problem defined below. 
+
+(1) Copy the data in the table to a CSV file and import it into your program using pandas.
+
+(2) Use the imported data and reproduce the chart shown in the document. 
+
+(3) Use the imported data and reproduce the chart for 'Men Participation in the Judiciary'. (This bar chart is not shown in the document. You need to render the chart using the data in the same table.)
+
+(4) Use matplotlib API to save the generated graphics as a jpg files.
