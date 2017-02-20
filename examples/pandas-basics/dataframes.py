@@ -68,7 +68,7 @@ apply_on_columns(df, prcol)
 def append_ignore_index_same_columns():
     datasetA = [[1, 2, 3], [10, 20, 30]]
     datasetB = [[100, 300, 400], [1000, 2000, 3000], [10000, 20000, 30000]]
-
+    #
     # notice that both data sets are based on the same variables.
     dfA = pd.DataFrame(datasetA, columns=['a', 'b', 'c'])
     dfB = pd.DataFrame(datasetB, columns=dfA.columns)
@@ -100,9 +100,28 @@ def append_merge_index_same_columns():
   dfB.index = ['keyX', 'keyY', 'keyZ']
   ## 
   dfAB = dfA.append(dfB, verify_integrity=True)
-  ##
   assert(dfA.index.intersection(dfB.index).size == 0)
   assert(((dfA.index | dfB.index) == dfAB.index).all())
+  ##
+  ### dfA
+  #      |  a   b   c
+  # key1 |  1   2   3
+  # key2 | 10  20  30
+  ###
+  ### dfB
+  #      |     a      b      c
+  # keyX |   100    300    400
+  # keyY |  1000   2000   3000
+  # keyZ | 10000  20000  30000
+  ###
+  ### dfAB
+  #      |     a      b      c
+  # key1 |     1      2      3
+  # key2 |    10     20     30
+  # keyX |   100    300    400
+  # keyY |  1000   2000   3000
+  # keyZ | 10000  20000  30000
+  ###
 
 ### +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -132,9 +151,10 @@ def project_dataframe_columns():
 
 def cross_dataframe_aligned_indices():
   df = pd.DataFrame([10, 20, 30, 40, 50], columns=['a'])
-  df.index = [list('pqrst')]
+  df.index = list('pqrst')
   df2 = pd.DataFrame([111, 222, 333, 444, 555], columns=['a'])
-  df2.index = [list('pqrst')]
+  df2.index = list('pqrst')
+  dfNew = pd.DataFrame()
   dfNew['a'] = df['a']
   dfNew['b'] = df2['a']
 ###
@@ -151,9 +171,10 @@ def cross_dataframe_aligned_indices():
 
 def cross_dataframe_unaligned_indices():
   df = pd.DataFrame([10, 20, 30, 40, 50], columns=['a'])
-  df.index = [list('pqrst')]
+  df.index = list('pqrst')
   df2 = pd.DataFrame([111, 222, 333, 444, 555], columns=['a'])
-  df2.index = [list('rstpq')]
+  df2.index = list('rstpq')
+  dfNew = pd.DataFrame()
   dfNew['a'] = df['a']
   dfNew['b'] = df2['a']
   ###
@@ -166,14 +187,15 @@ def cross_dataframe_unaligned_indices():
   ###
   assert(dfNew['a']['p'] == 10)
   assert(dfNew['b']['t'] == 333)
-  assert(dfNew['b']['r'] == 111)
-
+  assert(dfNew['b']['s'] == 222)
+  assert(dfNew['a']['r'] == 30)
 
 def cross_dataframe_unaligned_indices():
   df = pd.DataFrame([10, 20, 30, 40, 50], columns=['a'])
-  df.index = [list('pqrst')]
+  df.index = list('pqrst')
   df2 = pd.DataFrame([111, 222, 333, 444, 555], columns=['b'])
-  df2.index = [list('rstpq')]
+  df2.index = list('rstpq')
+  dfNew = pd.DataFrame()
   dfNew['a'] = df['a']
   dfNew['b'] = df2['b']
   ###
@@ -185,5 +207,6 @@ def cross_dataframe_unaligned_indices():
   ##  t | 333  50
   ###
   assert(dfNew['a']['p'] == 10)
-  assert(dfNew['b']['t'] == 555)
+  assert(dfNew['b']['t'] == 333)
+  assert(dfNew['b']['r'] == 111)
 
