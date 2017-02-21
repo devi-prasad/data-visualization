@@ -1,10 +1,11 @@
-Data
-(pandas reference, pp 615)
+### Data
+### (pandas reference, pp 615)
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+###
 import pandas as pd
 import numpy as np
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+###
+
 ones = np.ones(5, dtype=np.int32)
 zs = np.zeros(5, dtype=np.int32)
 emp = np.empty(5, dtype=np.int32)
@@ -13,50 +14,51 @@ arr = np.array(5, dtype=np.int32)
 emp = np.empty((2, 2), dtype=np.int32)
 zs = np.zeros((3, 5), dtype=np.int32)
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ###  numpy.arange([start, ] stop, [step, ] dtype=None)
 ###  creates an interval that is closed on the left a and open on the right.
 ### 
 np.arange(10, dtype=np.int32) # np.array[0, ..., 9]
 np.arange(10, 100, 7)
 np.arange(-0.2, 0.5, 0.1, dtype=np.float) 
-   # np.array([-0.2, -0.1, 0., 0.1, 0.2, 0.3, 0.4])
+# ==> np.array([-0.2, -0.1, 0., 0.1, 0.2, 0.3, 0.4])
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 np.cumsum([0.30, 0.15, 0.10, 0.07, 0.38])
 np.cumsum([0.08, 0.11, 0.17, 0.32, 0.32])
 
 np.cumsum([range(10)])
 np.cumsum([range(1,10)])
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-np.unique(ar, return_index=False, return_inverse=False, return_counts=False)
-np.union1d(ar1, r2) 
-np.intersect1d(ar1, ar2, assume_unique=False)
-np.setdiff1d(ar1, ar2, assume_unique=False)
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# np.unique(ar, return_index=False, return_inverse=False, return_counts=False)
+# np.union1d(ar1, r2) 
+# np.intersect1d(ar1, ar2, assume_unique=False)
+# np.setdiff1d(ar1, ar2, assume_unique=False)
 
-Return evenly spaced numbers over a specified interval.
-Returns num evenly spaced samples
-interval is calculated over the closed interval [start, stop].
-The endpoint of the interval can optionally be excluded.
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)
+### Return evenly spaced numbers over a specified interval.
+### Returns num evenly spaced samples
+### interval is calculated over the closed interval [start, stop].
+### The endpoint of the interval can optionally be excluded.
 
 np.linspace(10, 20, num=11)
 
 np.linspace(0.1, 0.2, num=5)
-==> array([ 0.1, 0.125, 0.15, 0.175, 0.2 ])
+## ==> array([ 0.1, 0.125, 0.15, 0.175, 0.2 ])
 
 np.linspace(0.1, 0.2, num=5, endpoint=False)
-==> array([ 0.1, 0.12, 0.14, 0.16, 0.18])
+## ==> array([ 0.1, 0.12, 0.14, 0.16, 0.18])
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 map(np.abs, map(np.int, np.ceil(np.random.randn(10) * 20)))
 np.random.random_integers(-10, 100, 15)
 min(np.random.random_integers(-10, 100, 15))
 max(np.random.random_integers(-10, 100, 15))
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-NumPy arrays
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+### NumPy arrays
 
 np.random.rand()    # single random number
 np.random.rand(4)   # array of four random numbers
@@ -70,7 +72,7 @@ np.random.random(10)
 
 np.random.permutation([10, 20, 30, 40, 50]) # returns a permutation
 
-np.random.shuffle(ar) # in place shuffle - mutates the array
+np.random.shuffle([10, 20, 30, 40, 50]) # in place shuffle - mutates the array
 
 ar = np.array(range(24), dtype=np.int16)
 assert(ar.ndim == 1 and ar.size == 24)
@@ -80,10 +82,10 @@ assert(ar64.ndim == 2 and ar64.size == 24)
 assert(ar.ndim == 1 and ar.size == 24)
 
 ar234 = ar.reshape(2, 3, 4)
-assert(ar232.ndim == 3 and ar64.size == 24)
+assert(ar234.ndim == 3 and ar64.size == 24)
 
 ar234 = ar.reshape(2, 3, -1)
-assert(ar232.ndim == 3 and ar64.size == 24)
+assert(ar234.ndim == 3 and ar64.size == 24)
 
 assert((ar.reshape(2, 3, 4) == ar.reshape(2, 3, -1)).all())
 
@@ -91,11 +93,11 @@ ar[4:10]  # slice
 ar[ [1, 3, 5, 7, 11] ] # indices
 
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-pandas Series
-
-Series(data, index, dtype) # index aka axes labels
-Series.append(ps, verify_integrity=False)
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+### pandas Series
+#
+## Series(data, index, dtype) # index aka axes labels
+## Series.append(ps, verify_integrity=False)
 
 psvals = pd.Series({'vals': np.random.random_integers(1, 400, 50)})
 
@@ -113,9 +115,13 @@ dyn.set_axis(0, ['p', 'j', 'r', 'php', 'pyret'])
 assert(dyn.php == 'PHP')
 
 sta.append(dyn)
-sta.append(sta, True)
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+try:
+  sta.append(sta, True)
+except:
+  None
+sta.append(sta, False)
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 df = pd.DataFrame({'vals':[1, 2, 3, 4, -7, 0]}, dtype=np.int16)
 dftwice = df * 2
@@ -129,7 +135,7 @@ df * 2 == df + df
 df.iloc[5] == 0
 df.iloc[0] == 1
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 imp = pd.DataFrame({'langs': np.array(['Algol', 'FORTRAN', 'C', 'C++', 'Java'], 
                    dtype=str)})
 fun = pd.DataFrame({'langs': np.array(['Haskell', 'ML', 'OCaml'],
@@ -140,7 +146,7 @@ all = pd.concat([imp, fun, dyn], ignore_index=True)
 sorted = all.sort_values('langs')
 sorted.langs.values # numpy.ndarray
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 imp = pd.DataFrame({'langs': np.array(['Algol', 'FORTRAN', 'C', 'C++', 'Java'], 
                                       dtype=str),
@@ -154,7 +160,7 @@ dyn = pd.DataFrame({'langs': np.array(['Python', 'JavaScript', 'Ruby', 'PHP'],
 
 all = pd.concat([imp, fun, dyn], ignore_index=True)
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 imp = pd.DataFrame({'langs': np.array(['Algol', 'FORTRAN', 'C', 'C++', 'Java'], 
                                       dtype=str),
@@ -163,18 +169,17 @@ imp = pd.DataFrame({'langs': np.array(['Algol', 'FORTRAN', 'C', 'C++', 'Java'],
                     'type':'imperative' })
 
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-df = pd.DataFrame({'pos': np.array([0, 1, 2, 3, 4, 5], dtype=np.int8)}
+df = pd.DataFrame({'pos': np.array([0, 1, 2, 3, 4, 5], dtype=np.int8)})
 
 pd.concat([df, df], ignore_index=True)
 pd.concat([df, df], ignore_index=False)
-
 df = pd.DataFrame({'pos': np.array([0, 1, 2, 3, 4, 5], dtype=np.int8),
                    'neg': np.array([-1, -2, -3, -4, -5, -6], dtype=np.int32) 
                  })
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 df1 = pd.DataFrame(
             {'A': ['A0', 'A1', 'A2', 'A3'],
              'B': ['B0', 'B1', 'B2', 'B3'],
@@ -182,6 +187,7 @@ df1 = pd.DataFrame(
              'D': ['D0', 'D1', 'D2', 'D3']
             },
             index=[0, 1, 2, 3]
+            #index=[1, 2, 3, 4]
       )
 
 df2 = pd.DataFrame(
@@ -191,7 +197,8 @@ df2 = pd.DataFrame(
            'D': ['D4', 'D5', 'D6', 'D7'],
            'E': ['E1', 'E2', 'E3', 'E4']
           },
-          index=[4, 5, 6, 7, 12]
+          index=[4, 5, 6, 7]
+          #index=[1, 2, 3, 4]
     )
 
 df3 = pd.DataFrame(
@@ -201,21 +208,22 @@ df3 = pd.DataFrame(
            'D': ['D8', 'D9', 'D10', 'D11']
           },
           index=[8, 9, 10, 11]
+          #index=[1, 2, 3, 4]
     )
 
 
-(1)
-Notice that the indices of each data frame is unique.
-Execute the following and check the result.
+#(1)
+##  Notice that the indices of each data frame is unique.
+##  Execute the following and check the result.
 
-  pd.concat([df1, df2, df3])
+pd.concat([df1, df2, df3])
 
-(2)
-Check what happens if we pass
-    index = [1, 2, 3, 4]
-while creating the instances, df1 and df2.
+#(2)
+## Check what happens if we pass
+##    index = [1, 2, 3, 4]
+## while creating the instances, df1 and df2.
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 df75 = pd.DataFrame(
         {'A': ['A4', 'A5', 'A6', 'A7', 'A8'],
