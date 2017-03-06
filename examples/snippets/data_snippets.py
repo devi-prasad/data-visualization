@@ -32,7 +32,7 @@ np.cumsum([range(1,10)])
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # np.unique(ar, return_index=False, return_inverse=False, return_counts=False)
-# np.union1d(ar1, r2) 
+# np.union1d(ar1, ar2) 
 # np.intersect1d(ar1, ar2, assume_unique=False)
 # np.setdiff1d(ar1, ar2, assume_unique=False)
 
