@@ -1,13 +1,15 @@
 
-Refer to ch1.pdf. Page no. 8. Table 1.7: Percentage Distribution of Population by Age-group and Sex. 
+Refer to ch1.pdf. Page no. 8. Table 1.7: Percentage Distribution of Population 
+by Age-group and Sex. 
 
-Take a look at the bar chart below this table in the document. Use this chart (axes, axes markers, and legends) as a reference for the problem defined below. 
+Take a look at the bar chart below this table in the document. Use this chart 
+(axes, axes markers, and legends) as a reference for the problem defined below. 
 
-(1) Copy the data in the table to a CSV file and import it into your program using pandas.
+(1) Manually copy the data in the table to a CSV file. Use pandas API to import 
+this CSV file into your program.
 
-(2) Use the imported data and generate small-multiples of bar chart for five years (2008, 2009, 2010, 2011 and 2012) separately. 
+(2) Use the imported data and generate small-multiples of bar chart for 
+five years (2008, 2009, 2010, 2011 and 2012) separately. 
 
 (3) Use matplotlib API to save the generated graphics as a jpg file.
-
-
 

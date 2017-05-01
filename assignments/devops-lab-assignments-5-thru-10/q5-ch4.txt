@@ -1,8 +1,11 @@
 Refer to ch4.pdf. Page no. 7. Table 4.6: Women Employment in Organized Sector.
 
-Take a look at the chart below on the same page of this document. Use this bar chart (axes, axes markers, and legends) as a reference for the problem defined below. 
+Take a look at the chart below on the same page of this document. Use this bar 
+chart (axes, axes markers, and legends) as a reference for the problem defined 
+below. 
 
-(1) Copy the data in the table to a CSV file and import it into your program using pandas.
+(1) Manually copy the data in the table to a CSV file. Use pandas API to import 
+the CSV file into your program.
 
 (2) Use the imported data and reproduce the chart shown in the document. 
 

@@ -1,13 +1,17 @@
-Refer to ch2.pdf. Page no. 5. Table 2.4: Expectation of life at birth by sex and residences. 
+Refer to ch2.pdf. Page no. 5. Table 2.4: Expectation of life at birth by sex and 
+residences. 
 
-Take a look at the bar chart below this table in the document. Use this chart (axes, axes markers, and legends) as a reference for the problem defined below. 
+Take a look at the bar chart below that table in the document. Use this chart 
+(axes, axes markers, and legends) as a reference for the problem defined below. 
 
-(1) Copy the data in the table to a CSV file and import it into your program using pandas.
+(1) Manually copy the data in the table to a CSV file. Use pandas API to import 
+this CSV file into your program.
 
 (2) Use the imported data and reproduce the bar chart shown in the document. 
 
 (3) Use matplotlib API to save the generated graphics as a jpg file.
 
-(4) Generate a separate bar chart for the range of years same as above, considering only the rural population. 
+(4) Generate a separate bar chart for the range of years same as above, 
+considering only the rural population. 
 
 
